@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Changes in version 0.1
+
+- checkquota and vpopbull were imported from vmailmgr 0.96.9 and
+  translated from C++ to C.
+
+- checkquota now scans IMAP folders.
+
+- vpopbull calls utime to make doubly sure the .timestamp file is
+  updated.
+
+Development of this version has been sponsored by FutureQuest, Inc.
+ossi@FutureQuest.net  http://www.FutureQuest.net/
+-------------------------------------------------------------------------------

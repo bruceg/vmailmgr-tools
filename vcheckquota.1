@@ -1,0 +1,56 @@
+.TH vcheckquota 1
+.SH NAME
+vcheckquota \- Check a vmailmgr account's quota on delivery
+.SH SYNOPSIS
+.P
+.B vcheckquota
+[
+.B options
+]
+.SH DESCRIPTION
+.B vcheckquota
+ensures that the hard and soft quotas are enforced and
+that message counts and sizes are appropriately limited.
+The limits are set by the vadduser or vchattr command.
+
+.P
+The following rules are applied:
+.TP
+1
+If the message is larger than the message size limit, it is rejected.
+.TP
+2
+If the user has too many messages in their mailbox,
+further messages are rejected.
+.TP
+3
+If the user is over their hard quota, all further messages are rejected
+and no warning messages are linked in.
+.TP
+4
+If the user is over their soft quota, and the message is small
+(as defined by
+.IR soft-maxsize ),
+the message is accepted, otherwise
+it is rejected.  If
+.I soft-message
+is defined, a warning message is linked into the mailbox in either
+case.
+.SH OPTIONS
+.TP
+\fB-a\fR \fIBYTES\fR, \fB--soft-maxsize\fR=\fIBYTES\fR
+The maximum message size after soft quota is reached, in bytes.
+Defaults to 4096.
+.TP
+\fB-m\fR \fIPATH\fR, \fB--soft-message\fR=\fIPATH\fR
+The path to the soft quota warning message.
+.SH SEE ALSO
+vadduser(1),
+vchattr(1)
+.SH CAVEATS
+The soft-message is linked into the users maildir once for each
+message that is received while the account is over its soft quota.  This may
+result in multiple warning messages.
+.P
+This program scans every file in the maildir and all IMAP folders.  This
+can be resource intensive on large maildirs.

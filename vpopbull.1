@@ -1,0 +1,35 @@
+.TH vpopbull 1
+.SH NAME
+vpopbull \- Delivers pop bulletins to virtual users
+.SH SYNOPSIS
+.B vpopbull
+[
+.B options
+]
+.I directory ...
+.SH DESCRIPTION
+Scans the named bulletin directories for any bulletins which are newer
+than the
+.I .timestamp
+file in the specified maildir.
+For each bulletin that it finds, it adds a symlink to that bulletin to
+the specified maildir.
+Since no reformatting is done, these bulletins must be fully formatted
+email messages, including full headers.
+After it has finished, it updates the timestamp file.
+.P
+This program is designed to be run from
+.IR checkvpw-postsetuid .
+.SH RETURN VALUE
+Exits false if an error occurred during startup, true otherwise.
+.SH ENVIRONMENT
+This program expects the environment variable
+.I HOME
+to be set, and executes a change directory to the contents of it
+before starting.
+.P
+This program expects
+.I MAILDIR
+to be set, and delivers any bulletins that it finds into this maildir.
+.SH SEE ALSO
+checkvpw(1)

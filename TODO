@@ -1,0 +1,2 @@
+- Make vcheckquota (optionally) report the limits when giving the error
+  message.

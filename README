@@ -1,0 +1,23 @@
+vmailmgr-tools
+Add-on tools for use with vmailmgr
+Bruce Guenter <bruceg@em.ca>
+Version 0.1
+2002-05-03
+
+This package contains a growing collection of tools to replace or
+supplement exisiting vmailmgr functionality.
+
+A mailing list has been set up to discuss this and other packages.
+To subscribe, send an email to:
+	vmailmgr-subscribe@lists.em.ca
+A mailing list archive is available at:
+	http://lists.em.ca/?list=vmailmgr
+
+Development versions of vmailmgr-tools are available via anonymous CVS.
+Set your CVSROOT to ":pserver:cvs@bruce-guenter.dyndns.org:/CVS",
+login with an empty password, and check out the "vmailmgr-tools" module.
+
+This package is Copyright(C) 2002 Bruce Guenter, and may be copied
+according to the GNU GENERAL PUBLIC LICENSE (GPL) Version 2 or a later
+version.  A copy of this license is included with this package.  This
+package comes with no warranty of any kind.
