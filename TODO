@@ -1,2 +1,12 @@
 - Make vcheckquota (optionally) report the limits when giving the error
   message.
+
+- Tests:
+  - vcheckquota:
+    handle $MAILDIR set wrong
+    handle empty $MAILDIR
+    count messages
+    count sizes
+    handle soft/hard quota
+    handle subdirs
+  - vpopbull
