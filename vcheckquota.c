@@ -256,13 +256,12 @@ unsigned my_strtou(const char* str, const char** end)
 int cli_main(int argc, char** argv)
 {
   const char* tmp;
-#define ENV_VAR_REQ(VAR,ENV) tmp = getenv(#ENV); if (!tmp) die1(111, #ENV " is not set");
-#define ENV_VAR_STR(VAR,ENV) ENV_VAR_REQ(VAR,ENV) VAR = tmp; if (!tmp[0]) die1(111, #ENV " is empty");
-#define ENV_VAR_UINT(VAR,ENV) ENV_VAR_REQ(VAR,ENV) VAR = my_strtou(tmp, &tmp); if (*tmp != 0) die1(111, #ENV " is not a valid number");
+#define ENV_VAR_REQ(VAR,ENV) VAR = getenv(#ENV); if (!VAR) die1(111, #ENV " is not set");
+#define ENV_VAR_UINT(VAR,ENV) ENV_VAR_REQ(tmp,ENV) VAR = my_strtou(tmp, &tmp); if (*tmp != 0) die1(111, #ENV " is not a valid number");
 
-  ENV_VAR_STR(maildir,  MAILDIR);
+  ENV_VAR_REQ(maildir,  MAILDIR);
   /* Always succeed for aliases. */
-  if (!maildir) return 0;
+  if (maildir[0] == 0) return 0;
 
   ENV_VAR_UINT(maxsize,   VUSER_MSGSIZE);
   ENV_VAR_UINT(maxcount,  VUSER_MSGCOUNT);
