@@ -16,21 +16,21 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <sysdeps.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-#include "systime.h"
+#include <systime.h>
 #include <unistd.h>
 #include <utime.h>
-#include "direntry.h"
-#include "misc/misc.h"
-#include "str/str.h"
-#include "msg/msg.h"
-#include "cli/cli.h"
-#include "iobuf/iobuf.h"
+#include <misc/misc.h>
+#include <str/str.h>
+#include <msg/msg.h>
+#include <cli/cli.h>
+#include <iobuf/iobuf.h>
 
 const char program[] = "vpopbull";
 const int msg_show_pid = 0;

@@ -1,6 +1,5 @@
-cli/cli.a
-msg/msg.a
-iobuf/iobuf.a
-str/str.a
-misc/misc.a
-iopoll.o
+-lbg-cli
+-lbg-msg
+-lbg-iobuf
+-lbg-str
+-lbg-misc

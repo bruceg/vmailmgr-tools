@@ -16,19 +16,19 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <sysdeps.h>
 #include <errno.h>
 #include <limits.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
 #include <unistd.h>
-#include "systime.h"
-#include "direntry.h"
-#include "cli/cli.h"
-#include "iobuf/iobuf.h"
-#include "str/str.h"
-#include "misc/misc.h"
-#include "msg/msg.h"
+#include <systime.h>
+#include <cli/cli.h>
+#include <iobuf/iobuf.h>
+#include <str/str.h>
+#include <misc/misc.h>
+#include <msg/msg.h>
 
 const char program[] = "vcheckquota";
 const int msg_show_pid = 0;
