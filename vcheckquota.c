@@ -244,12 +244,21 @@ static void check_quota(void)
   }
 }
 
+unsigned my_strtou(const char* str, const char** end)
+{
+  if (*str == '-') {
+    *end = str + 1;
+    return UINT_MAX;
+  }
+  return strtou(str, end);
+}
+
 int cli_main(int argc, char** argv)
 {
   const char* tmp;
 #define ENV_VAR_REQ(VAR,ENV) tmp = getenv(#ENV); if (!tmp) die1(111, #ENV " is not set");
 #define ENV_VAR_STR(VAR,ENV) ENV_VAR_REQ(VAR,ENV) VAR = tmp; if (!tmp[0]) die1(111, #ENV " is empty");
-#define ENV_VAR_UINT(VAR,ENV) ENV_VAR_REQ(VAR,ENV) VAR = strtou(tmp, &tmp); if (*tmp) die1(111, #ENV " is not a valid number");
+#define ENV_VAR_UINT(VAR,ENV) ENV_VAR_REQ(VAR,ENV) VAR = my_strtou(tmp, &tmp); if (*tmp != 0) die1(111, #ENV " is not a valid number");
 
   ENV_VAR_STR(maildir,  MAILDIR);
   /* Always succeed for aliases. */

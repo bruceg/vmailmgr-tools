@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
+Changes in version 0.2
+
+- Fixed vcheckquota to properly handle unset quota numbers (represented
+  externally as "-").
+
+Development of this version has been sponsored by FutureQuest, Inc.
+ossi@FutureQuest.net  http://www.FutureQuest.net/
+-------------------------------------------------------------------------------
 Changes in version 0.1
 
 - checkquota and vpopbull were imported from vmailmgr 0.96.9 and
