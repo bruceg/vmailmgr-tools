@@ -9,9 +9,9 @@ supplement exisiting vmailmgr functionality.
 
 A mailing list has been set up to discuss this and other packages.
 To subscribe, send an email to:
-	vmailmgr-subscribe@lists.em.ca
+	vmailmgr-subscribe@lists.untroubled.org
 A mailing list archive is available at:
-	http://lists.em.ca/?list=vmailmgr
+	http://lists.untroubled.org/?list=vmailmgr
 
 Development versions of vmailmgr-tools are available via anonymous CVS.
 Set your CVSROOT to ":pserver:cvs@bruce-guenter.dyndns.org:/CVS",
