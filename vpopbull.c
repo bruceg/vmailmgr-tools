@@ -36,7 +36,7 @@ const char program[] = "vpopbull";
 const int msg_show_pid = 0;
 const char cli_help_prefix[] = "Delivers pop bulletins to virtual users\n";
 const char cli_help_suffix[] = "";
-const char cli_args_usage[] = "bulletin-dir [bulletin-dir2 ...]";
+const char cli_args_usage[] = "bulletin-dir [bulletin-dir2 ...] [-- command]";
 const int cli_args_min = 1;
 const int cli_args_max = -1;
 
