@@ -156,15 +156,21 @@ int cli_main(int argc, char** argv)
   const char* home;
   
   if ((home = getenv("HOME")) == 0)
-    die1(1, "Can't determine home directory");
+    die1(1, "$HOME is not set");
   if (chdir(home) == -1)
     die1sys(1, "Can't change to home directory");
   if ((maildir = getenv("MAILDIR")) == 0)
-    die1(1, "MAILDIR is not set");
+    die1(1, "$MAILDIR is not set");
   stat_maildir(maildir);
   str_copy2s(&dir, maildir, "/new");
-  for (i = 0; i < argc; i++)
+  for (i = 0; i < argc; i++) {
+    if (strcmp(argv[i], "--") == 0) { ++i; break; }
     scan_bulletins(dir.s, argv[i]);
+  }
   reset_timestamp();
+  if (i < argc) {
+    execvp(argv[i], argv+i);
+    die3sys(111, "Execution of '", argv[i], "' failed");
+  }
   return 0;
 }

@@ -4,6 +4,10 @@ Changes in version 0.2
 - Fixed vcheckquota to properly handle unset quota numbers (represented
   externally as "-").
 
+- Modified vpopbull to allow it to exec a command after scanning for
+  bulletins.  This lets it be used with pop3front and imapfront (which
+  use CVM instead of checkvpw).
+
 Development of this version has been sponsored by FutureQuest, Inc.
 ossi@FutureQuest.net  http://www.FutureQuest.net/
 -------------------------------------------------------------------------------

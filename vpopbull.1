@@ -7,6 +7,9 @@ vpopbull \- Delivers pop bulletins to virtual users
 .B options
 ]
 .I directory ...
+[
+.B -- command [ args ... ]
+]
 .SH DESCRIPTION
 Scans the named bulletin directories for any bulletins which are newer
 than the
@@ -18,8 +21,11 @@ Since no reformatting is done, these bulletins must be fully formatted
 email messages, including full headers.
 After it has finished, it updates the timestamp file.
 .P
-This program is designed to be run from
+This program was designed to be run from
 .IR checkvpw-postsetuid .
+If the list of directories is followed by a command, it is executed
+after the bulletins are delivered.  This allows it to be used directly
+with qmail-pop3d or pop3front.
 .SH RETURN VALUE
 Exits false if an error occurred during startup, true otherwise.
 .SH ENVIRONMENT
