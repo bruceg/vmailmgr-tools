@@ -1,6 +1,9 @@
 -------------------------------------------------------------------------------
 Changes in version 0.3
 
+- Optionally make hard links instead of symlinks to the bulletins in
+  vpopbull.  This allows for deleting the original bulletin without
+  making the bulletins unreadable.
 -------------------------------------------------------------------------------
 Changes in version 0.2
 

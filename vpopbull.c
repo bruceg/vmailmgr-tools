@@ -41,8 +41,14 @@ const int cli_args_min = 1;
 const int cli_args_max = -1;
 
 static int o_quiet = 0;
+static int o_hardlink = 0;
+static int (*linkfn)(const char*,const char*);
 
 cli_option cli_options[] = {
+  { 'l', "link", CLI_FLAG, 1, &o_hardlink,
+    "Make hard links to the bulletins.", 0 },
+  { 's', "symlink", CLI_FLAG, 0, &o_hardlink,
+    "Make symbolic links to the bulletins (default).", 0 },
   { 0, "quiet", CLI_FLAG, 1, &o_quiet,
     "Suppress all status messages", 0 },
   {0,0,0,0,0,0,0}
@@ -71,8 +77,8 @@ static void make_link(const char* linkname, const char* dest)
       break;
     sleep(2);
   }
-  if (symlink(linkname, destname.s) == -1)
-    die5sys(111, "Could not make symbolic link from '", linkname,
+  if (linkfn(linkname, destname.s) == -1)
+    die5sys(111, "Could not make link from '", linkname,
 	    "' to '", destname.s, "'");
 }
 
@@ -161,6 +167,7 @@ int cli_main(int argc, char** argv)
     die1sys(1, "Can't change to home directory");
   if ((maildir = getenv("MAILDIR")) == 0)
     die1(1, "$MAILDIR is not set");
+  linkfn = o_hardlink ? link : symlink;
   stat_maildir(maildir);
   str_copy2s(&dir, maildir, "/new");
   for (i = 0; i < argc; i++) {
