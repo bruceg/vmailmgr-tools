@@ -1,3 +1,4 @@
+/* $Id$ */
 /* vpopbull - Delivers POP bulletins to vmailmgr users
  * Copyright (C) 1999-2002 Bruce Guenter <bruceg@em.ca>
  *

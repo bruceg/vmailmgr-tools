@@ -1,3 +1,4 @@
+/* $Id$ */
 /* vcheckquota.c - Check a vmailmgr account's quota on delivery.
  * Copyright (C) 2002  Bruce Guenter <bruceg@em.ca>
  *
