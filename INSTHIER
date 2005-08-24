@@ -1,0 +1,7 @@
+>bin
+c:::755::vcheckquota
+c:::755::vpopbull
+
+>man
+c:::644:man1:vcheckquota.1
+c:::644:man1:vpopbull.1
