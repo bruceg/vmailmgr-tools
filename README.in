@@ -1,8 +1,8 @@
-vmailmgr-tools
+@PACKAGE@
 Add-on tools for use with vmailmgr
-Bruce Guenter <bruceg@em.ca>
-Version 0.2
-2002-05-10
+Bruce Guenter <bruce@untroubled.org>
+Version @VERSION@
+@TODAY@
 
 This package contains a growing collection of tools to replace or
 supplement exisiting vmailmgr functionality.
@@ -13,11 +13,17 @@ To subscribe, send an email to:
 A mailing list archive is available at:
 	http://lists.untroubled.org/?list=vmailmgr
 
-Development versions of vmailmgr-tools are available via anonymous CVS.
-Set your CVSROOT to ":pserver:cvs@bruce-guenter.dyndns.org:/CVS",
-login with an empty password, and check out the "vmailmgr-tools" module.
+Development versions of @PACKAGE@ are available via Subversion at:
+	svn://bruce-guenter.dyndns.org/@PACKAGE@/trunk
 
-This package is Copyright(C) 2002 Bruce Guenter, and may be copied
+Installation:
+
+- Make sure the latest version of bglibs from
+  http://untroubled.org/bglibs/ is compiled and installed.
+- Build the sources by running "make"
+- After the package has been compiled, run "make install" as root.
+
+This package is Copyright(C) 2002,2005 Bruce Guenter, and may be copied
 according to the GNU GENERAL PUBLIC LICENSE (GPL) Version 2 or a later
 version.  A copy of this license is included with this package.  This
 package comes with no warranty of any kind.
